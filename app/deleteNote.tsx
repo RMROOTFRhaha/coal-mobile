@@ -1,8 +1,14 @@
 import {Text, View} from "react-native";
+import React, { useEffect, useState } from 'react';
 import { Textarea } from '~/components/ui/textarea';
 import { Button } from "~/components/ui/button";
+import { deleteANote } from '../databases/db';
 
 export default function deleteNote() {
+
+    // Initial State Set-up
+    const [value, setValue] = useState('');
+
     return (
         <View style={{
             flex: 1,
@@ -11,9 +17,19 @@ export default function deleteNote() {
         }}
         >
             
-            <Text>Delete Note By Name</Text>
-            <Textarea/>
-            <Button style={{ backgroundColor: 'white' }}>Confirm</Button>
+            <Text>Delete Note By ID</Text>
+            <Textarea
+                value={value}
+                onChangeText={setValue}
+            />
+            <Button 
+                style={{ backgroundColor: 'white' }}
+                onPress={ () => deleteANote(value) }
+            >
+                <Text>
+                    Confirm
+                </Text>
+            </Button>
             
         </View>
     );

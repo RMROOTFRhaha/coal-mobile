@@ -1,8 +1,16 @@
 import {Text, View} from "react-native";
+import React, { useEffect, useState } from 'react';
 import { Textarea } from '~/components/ui/textarea';
 import { Button } from "~/components/ui/button";
+import { createANote } from '../databases/db';
 
 export default function createNote() {
+
+    // Initial State Set-up
+    const[noteName, setNoteName] = useState('');
+    const[noteContent, setNoteContent] = useState('');
+
+
     return (
         <View style={{
             flex: 1,
@@ -10,12 +18,25 @@ export default function createNote() {
             alignItems: "center",
         }}
         >
-            
+            <Button 
+                style={{ backgroundColor: 'white' }}
+                onPress={ () => createANote(noteName, noteContent) }
+            >
+                <Text>
+                    Save Note
+                </Text>
+            </Button>
             <Text>Name Your Note</Text>
-            <Textarea/>
+            <Textarea
+                value={noteName}
+                onChangeText={setNoteName}
+            />
             <Text>Content</Text>
-            <Textarea/>
-            <Button style={{ backgroundColor: 'white' }}>Save</Button>
+            <Textarea
+                value={noteContent}
+                onChangeText={setNoteContent}
+            />
+            
             
         </View>
     );
