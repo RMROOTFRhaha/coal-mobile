@@ -17,6 +17,8 @@ export default function Index() {
       <Link href="/openedNote" style={styles.button}>Edit A Note</Link>
       <Link href="/deleteNote" style={styles.button}>Delete A Note</Link>
 
+      <Link href="/testFetch" style={styles.button}>Test the fetch API</Link>
+
       
 
     </View>

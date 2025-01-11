@@ -42,7 +42,7 @@ export const viewNotes = () => {
     return (
         <ScrollView horizontal bounces={false} showsHorizontalScrollIndicator={false}>
             <Text>Your Existing Notes</Text>
-            <Button onPress={ () => handleGetNotes() } >
+            <Button onPress={ () => handleGetNotes() }>
                 <Text>
                     Click me to see notes
                 </Text>

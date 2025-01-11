@@ -10,6 +10,7 @@ export default function RootLayout() {
       <Stack.Screen name="createNote" options={{ title: 'Note Creation In Progress' }} />
       <Stack.Screen name="openedNote" options={{title: 'Note Edit In Progress'}} />
       <Stack.Screen name="deleteNote" options={{title: 'Note Deletion In Progress'}} />
+      <Stack.Screen name="testFetch" options={{title: 'Test Fetch API'}} />
     </Stack>
     );
 }
